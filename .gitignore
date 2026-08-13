@@ -1,0 +1,9 @@
+# Arquivos brutos do INSS (varios MB cada, baixados manualmente,
+# ver README para os links oficiais de download)
+*.xlsx
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
