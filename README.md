@@ -63,8 +63,8 @@ O frontend não faz nenhuma agregação em memória: cada gráfico consome um
 endpoint que já devolve o número pronto (contagem, taxa, ranking), calculado
 via `annotate`/`Count`/`TruncMonth` do ORM do Django. Os cinco endpoints
 analíticos (`kpis`, `serie-temporal`, `por-uf`, `por-especie`,
-`motivos-indeferimento`) são cacheados em memória por `cache_page` (10
-minutos, 1 hora para `especies`/`ufs` que são listas fixas), porque os dados
+`motivos-indeferimento`) são cacheados em memória por `cache_page` (1 hora,
+mesmo prazo usado em `especies`/`ufs`, que são listas fixas), porque os dados
 são só leitura após a importação, então recalcular a mesma combinação de
 filtro em toda troca de tela é desperdício. Se o painel crescesse pro período
 completo (jun/2023–jun/2025), o próximo passo de performance seria trocar

@@ -54,7 +54,7 @@ class IndeferimentoViewSet(ReadOnlyModelViewSet):
     filterset_class = IndeferimentoFilter
 
 
-@cache_page(60 * 10)
+@cache_page(60 * 60)
 @api_view(["GET"])
 def kpis_view(request):
     concessoes_qs = _aplicar_filtros(Concessao.objects.all(), request)
@@ -80,7 +80,7 @@ def kpis_view(request):
     })
 
 
-@cache_page(60 * 10)
+@cache_page(60 * 60)
 @api_view(["GET"])
 def serie_temporal_view(request):
     concedidos_qs = (
@@ -116,7 +116,7 @@ def serie_temporal_view(request):
     return Response(resultado)
 
 
-@cache_page(60 * 10)
+@cache_page(60 * 60)
 @api_view(["GET"])
 def por_uf_view(request):
     concedidos_qs = _aplicar_filtros(Concessao.objects.all(), request).values("uf").annotate(total=Count("id"))
@@ -145,7 +145,7 @@ def por_uf_view(request):
     return Response(resultado)
 
 
-@cache_page(60 * 10)
+@cache_page(60 * 60)
 @api_view(["GET"])
 def por_especie_view(request):
     concedidos_qs = (
@@ -187,7 +187,7 @@ def por_especie_view(request):
     return Response(resultado)
 
 
-@cache_page(60 * 10)
+@cache_page(60 * 60)
 @api_view(["GET"])
 def motivos_indeferimento_view(request):
     qs = _aplicar_filtros(Indeferimento.objects.all(), request)
