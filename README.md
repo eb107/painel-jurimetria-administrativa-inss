@@ -126,11 +126,12 @@ conjunto de dados):
 | Outubro/2023 | [xlsx](https://armazenamento-dadosabertos.s3.sa-east-1.amazonaws.com/PDA_2023_2025/Grupos_de_dados/Benef%C3%ADcios+concedidos/JUN23-ABR24/DADOS+ABERTOS_CONCEDIDOS_OUTUBRO+2023.xlsx) | [xlsx](https://armazenamento-dadosabertos.s3.sa-east-1.amazonaws.com/PDA_2023_2025/Grupos_de_dados/Benef%C3%ADcios+Indeferidos/UPDATED/INDEFERIDOS_DADOS_ABERTOS_OUTUBRO+2023.xlsx) |
 | Novembro/2023 | [xlsx](https://armazenamento-dadosabertos.s3.sa-east-1.amazonaws.com/PDA_2023_2025/Grupos_de_dados/Benef%C3%ADcios+concedidos/JUN23-ABR24/DADOS+ABERTOS_CONCEDIDOS_NOVEMBRO+2023.xlsx) | [xlsx](https://armazenamento-dadosabertos.s3.sa-east-1.amazonaws.com/PDA_2023_2025/Grupos_de_dados/Benef%C3%ADcios+Indeferidos/UPDATED/INDEFERIDOS_DADOS_ABERTOS_NOVEMBRO+2023.xlsx) |
 
-Depois de baixar, importe:
+Depois de baixar, importe (troque o caminho abaixo pelo local real onde o
+arquivo baixado ficou salvo, ex. `C:\Downloads\DADOS ABERTOS_CONCEDIDOS_JULHO 2023.xlsx`):
 
 ```bash
-uv run python manage.py ingest_pda "caminho/CONCEDIDOS_MES_ANO.xlsx" --tipo concedido
-uv run python manage.py ingest_pda "caminho/INDEFERIDOS_MES_ANO.xlsx" --tipo indeferido
+uv run python manage.py ingest_pda "<caminho-do-arquivo-concedidos>.xlsx" --tipo concedido
+uv run python manage.py ingest_pda "<caminho-do-arquivo-indeferidos>.xlsx" --tipo indeferido
 uv run python manage.py runserver 8000
 ```
 
